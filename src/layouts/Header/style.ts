@@ -19,6 +19,10 @@ const Line = styled.span`
   position: absolute;
   z-index: 100;
   left: calc(48px + 64px);
+
+  @media screen and (max-width: 1400px) {
+    display: none;
+  }
 `;
 
 const Navbar = styled.nav`
@@ -47,15 +51,8 @@ const SLink = styled(Link)`
   color: #ffffff;
   font-family: "Barlow Condensed", sans-serif;
   text-decoration: none;
+  letter-spacing: 2.7px;
+  font-size: 16px;
 `;
 
-const Underline = styled(motion.span)`
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: #ffffff;
-`;
-
-export { Container, Line, Navbar, SLink, Links, LinkItem, Underline };
+export { Container, Line, Navbar, SLink, Links, LinkItem };

@@ -40,6 +40,9 @@
             ],
             "@/*": [
                 "./src/*"
+            ],
+            "@Destination/*": [
+                "./src/pages/Destination/*"
             ]
         }
     },

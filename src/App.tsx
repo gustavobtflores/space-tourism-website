@@ -7,6 +7,7 @@ import Container from "@/components/Container";
 import Header from "@/layouts/Header";
 
 import background from "@/assets/home/background-home-desktop.jpg";
+import Destination from "@pages/Destination";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/destination" element={<Destination />} />
           </Routes>
         </Container>
       </AppBody>
