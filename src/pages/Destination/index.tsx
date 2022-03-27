@@ -22,7 +22,7 @@ const styles = {
 
 const images = [moon, mars, europa, titan];
 
-const Destination = () => {
+const Destination: React.FC = () => {
   const [selectedAstro, setSelectedAstro] = useState(0);
 
   return (
@@ -36,7 +36,17 @@ const Destination = () => {
             <Astro key={index}>
               {index === selectedAstro && (
                 <AnimatePresence>
-                  <motion.img key={image} src={image} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />
+                  <motion.img
+                    key={image}
+                    src={image}
+                    animate={{ y: [0, -20, 0] }}
+                    transition={{
+                      duration: 5,
+                      ease: "easeInOut",
+                      times: [0, 5],
+                      repeat: Infinity,
+                    }}
+                  />
                 </AnimatePresence>
               )}
             </Astro>
@@ -58,7 +68,7 @@ const Destination = () => {
               (destination, index) =>
                 index === selectedAstro && (
                   <AnimatePresence>
-                    <DestinationsTexts key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                    <DestinationsTexts key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                       <Heading2 key={index}>{destination.name}</Heading2>
                       <BodyText style={styles.bodytext}>{destination.description}</BodyText>
                       <Separator />

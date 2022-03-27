@@ -26,8 +26,6 @@ const Header = () => {
 
   const [selectedTab, setSelectedTab] = useState(getRoute());
 
-  getRoute();
-
   return (
     <Container>
       <img src={logoImg} />
