@@ -20,10 +20,10 @@ const Header = () => {
       <Navbar>
         <Links>
           {links.map((link, index) => (
-            <LinkItem>
+            <LinkItem key={index}>
               <SLink to={link.href} onClick={() => setSelectedTab(index)} key={index}>
                 {link.text}
-                {index === selectedTab ? <Underline layoutId="underline" transition={{ stiffness: 100 }} /> : null}
+                {index === selectedTab ? <Underline key={index} layoutId="underline" transition={{ stiffness: 100 }} /> : null}
               </SLink>
             </LinkItem>
           ))}

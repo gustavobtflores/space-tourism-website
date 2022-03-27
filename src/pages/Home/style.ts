@@ -21,6 +21,12 @@ const Explore = styled.a`
   align-self: flex-end;
   cursor: pointer;
   position: relative;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 0 48px rgba(255, 255, 255, 0.2);
+  }
 `;
 
 export { Content, TextWrapper, Explore };
