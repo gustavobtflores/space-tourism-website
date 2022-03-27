@@ -35,17 +35,11 @@
             "@pages/*": [
                 "./src/pages/*"
             ],
-            "@routes/*": [
-                "./src/routes/*"
-            ],
             "@theme/*": [
                 "./src/theme/*"
             ],
             "@/*": [
                 "./src/*"
-            ],
-            "@Header/*": [
-                "./src/layouts/Header/*"
             ]
         }
     },

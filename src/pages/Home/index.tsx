@@ -1,16 +1,21 @@
-import background from "@/assets/home/background-home-desktop.jpg";
-import Header from "@layouts/Header";
-import AppBody from "@theme/styled/AppBody";
-import Container from "@theme/styled/Container";
+import { BodyText, Heading1, Heading5 } from "@components/Headings";
+import { Content, TextWrapper, Explore } from "./style";
+
+const h1 = {
+  marginBottom: "24px",
+};
 
 const Home = () => {
   return (
     <>
-      <AppBody>
-        <Container backgroundImage={background}>
-          <Header />
-        </Container>
-      </AppBody>
+      <Content initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+        <TextWrapper>
+          <Heading5>SO, YOU WANT TO TRAVEL TO</Heading5>
+          <Heading1 style={h1}>SPACE</Heading1>
+          <BodyText>Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</BodyText>
+        </TextWrapper>
+        <Explore>EXPLORE</Explore>
+      </Content>
     </>
   );
 };
