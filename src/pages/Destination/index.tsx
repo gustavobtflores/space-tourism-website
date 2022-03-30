@@ -12,6 +12,8 @@ import titan from "@/assets/destination/image-titan.webp";
 import { AnimatePresence } from "framer-motion";
 import Underline from "@/components/Underline";
 
+const images = [moon, mars, europa, titan];
+
 const styles = {
   span: { opacity: "0.5", marginRight: "28px", fontWeight: "700" },
   h5: { marginBottom: "64px" },
@@ -19,8 +21,6 @@ const styles = {
   bodytext: { marginBottom: "50px" },
   subheading2: { marginBottom: "12px" },
 };
-
-const images = [moon, mars, europa, titan];
 
 const Destination: React.FC = () => {
   const [selectedAstro, setSelectedAstro] = useState(0);
@@ -39,12 +39,16 @@ const Destination: React.FC = () => {
                   <motion.img
                     key={image}
                     src={image}
-                    animate={{ y: [0, -20, 0] }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, y: [0, -20, 0] }}
                     transition={{
-                      duration: 5,
-                      ease: "easeInOut",
-                      times: [0, 5],
-                      repeat: Infinity,
+                      opacity: { duration: 0.3, ease: "easeOut" },
+                      y: {
+                        duration: 5,
+                        ease: "easeInOut",
+                        times: [0, 5],
+                        repeat: Infinity,
+                      },
                     }}
                   />
                 </AnimatePresence>

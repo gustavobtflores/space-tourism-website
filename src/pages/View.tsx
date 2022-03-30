@@ -12,6 +12,7 @@ import backgroundHome from "@/assets/home/background-home-desktop.jpg";
 import backgroundDestination from "@/assets/destination/background-destination-desktop.jpg";
 import backgroundCrew from "@/assets/crew/background-crew-desktop.jpg";
 import backgroundTech from "@/assets/technology/background-technology-desktop.jpg";
+import Crew from "./Crew";
 
 const View = () => {
   const location = useLocation();
@@ -36,6 +37,7 @@ const View = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/destination" element={<Destination />} />
+          <Route path="/crew" element={<Crew />} />
         </Routes>
       </Container>
     </AppBody>

@@ -8,6 +8,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Bellefair', serif;
     font-family: 'Barlow Condensed', sans-serif;
   }
+
+  body, html {
+    height: 100%;
+  }
+
+  #root {
+    height: 100%;
+  }
 `;
 
 export default GlobalStyle;

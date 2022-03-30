@@ -15,6 +15,25 @@ const Heading2 = styled.h2`
   text-transform: uppercase;
 `;
 
+const Heading3 = styled.h3`
+  font-family: Bellefair;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 64px;
+  text-align: left;
+  color: #ffffff;
+  text-transform: uppercase;
+`;
+
+const Heading4 = styled.h4`
+  font-family: "Bellefair", serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+`;
+
 const Heading5 = styled.h5`
   font-size: 28px;
   font-family: "Barlow Condensed", sans-serif;
@@ -47,4 +66,4 @@ const SubHeading2 = styled.h6`
   text-transform: uppercase;
 `;
 
-export { Heading1, Heading2, Heading5, BodyText, SubHeading1, SubHeading2 };
+export { Heading1, Heading2, Heading3, Heading4, Heading5, BodyText, SubHeading1, SubHeading2 };

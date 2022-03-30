@@ -7,6 +7,7 @@ const Content = styled(motion.main)`
   margin-left: auto;
   margin-right: auto;
   max-width: 1100px;
+  width: 100%;
 `;
 
 const Astro = styled(motion.div)`
