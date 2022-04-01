@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { BodyText, Heading1, Heading2, Heading5, SubHeading1, SubHeading2 } from "@/components/Headings";
@@ -12,7 +12,7 @@ import titan from "@/assets/destination/image-titan.webp";
 import { AnimatePresence } from "framer-motion";
 import Underline from "@/components/Underline";
 
-const images = [moon, mars, europa, titan];
+const images: string[] = [moon, mars, europa, titan];
 
 const styles = {
   span: { opacity: "0.5", marginRight: "28px", fontWeight: "700" },
@@ -23,7 +23,7 @@ const styles = {
 };
 
 const Destination: React.FC = () => {
-  const [selectedAstro, setSelectedAstro] = useState(0);
+  const [selectedAstro, setSelectedAstro] = React.useState<number>(0);
 
   return (
     <Content initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }}>
@@ -71,9 +71,9 @@ const Destination: React.FC = () => {
             {data.destinations.map(
               (destination, index) =>
                 index === selectedAstro && (
-                  <AnimatePresence>
+                  <AnimatePresence key={index}>
                     <DestinationsTexts key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                      <Heading2 key={index}>{destination.name}</Heading2>
+                      <Heading2>{destination.name}</Heading2>
                       <BodyText style={styles.bodytext}>{destination.description}</BodyText>
                       <Separator />
                       <AstroInfo>

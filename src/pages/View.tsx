@@ -13,6 +13,7 @@ import backgroundDestination from "@/assets/destination/background-destination-d
 import backgroundCrew from "@/assets/crew/background-crew-desktop.jpg";
 import backgroundTech from "@/assets/technology/background-technology-desktop.jpg";
 import Crew from "./Crew";
+import Technology from "./Technology";
 
 const View = () => {
   const location = useLocation();
@@ -38,6 +39,7 @@ const View = () => {
           <Route path="/" element={<Home />} />
           <Route path="/destination" element={<Destination />} />
           <Route path="/crew" element={<Crew />} />
+          <Route path="/tech" element={<Technology />} />
         </Routes>
       </Container>
     </AppBody>

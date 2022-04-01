@@ -43,6 +43,9 @@
             ],
             "@Destination/*": [
                 "./src/pages/Destination/*"
+            ],
+            "@Technology/*": [
+                "./src/pages/Technology/*"
             ]
         }
     },

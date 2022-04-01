@@ -11,10 +11,10 @@ import victor from "@/assets/crew/image-victor-glover.png";
 import anousheh from "@/assets/crew/image-anousheh-ansari.png";
 import { AnimatePresence } from "framer-motion";
 
-const crewImages = [douglas, mark, victor, anousheh];
+const crewImages: string[] = [douglas, mark, victor, anousheh];
 
 const Crew: React.FC = () => {
-  const [selectedPerson, setSelectedPerson] = useState(0);
+  const [selectedPerson, setSelectedPerson] = React.useState<number>(0);
 
   return (
     <Content initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, ease: "easeOut" }}>
@@ -26,7 +26,7 @@ const Crew: React.FC = () => {
           {data.crew.map(
             (crew, index) =>
               index === selectedPerson && (
-                <AnimatePresence>
+                <AnimatePresence key={index}>
                   <motion.div key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                     <Role>{crew.role}</Role>
                     <Heading3>{crew.name}</Heading3>
@@ -44,7 +44,7 @@ const Crew: React.FC = () => {
         {crewImages.map(
           (image, index) =>
             selectedPerson === index && (
-              <AnimatePresence>
+              <AnimatePresence key={index}>
                 <CrewImage initial={{ opacity: 0 }} animate={{ opacity: 1 }} src={image} alt="" />
               </AnimatePresence>
             )
