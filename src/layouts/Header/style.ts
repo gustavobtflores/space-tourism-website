@@ -9,6 +9,16 @@ const Container = styled.header`
   margin-top: 40px;
   margin-left: 55px;
   position: relative;
+
+  @media screen and (max-width: 992px) {
+    margin: 0;
+  }
+`;
+
+const HeaderLogo = styled.img`
+  @media screen and (max-width: 992px) {
+    margin-left: 40px;
+  }
 `;
 
 const Line = styled.span`
@@ -34,6 +44,10 @@ const Navbar = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 992px) {
+    max-width: 450px;
+  }
 `;
 
 const Links = styled.ul`
@@ -53,6 +67,19 @@ const SLink = styled(Link)`
   text-decoration: none;
   letter-spacing: 2.7px;
   font-size: 16px;
+
+  @media screen and (max-width: 992px) {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 2.35px;
+  }
 `;
 
-export { Container, Line, Navbar, SLink, Links, LinkItem };
+const LinkNumber = styled.span`
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+`;
+
+export { Container, Line, Navbar, SLink, Links, LinkItem, LinkNumber, HeaderLogo };

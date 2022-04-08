@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import logoImg from "@/assets/shared/logo.svg";
-import { Container, Line, Navbar, SLink, Links, LinkItem } from "./style";
+import { Container, Line, Navbar, SLink, Links, LinkItem, LinkNumber, HeaderLogo } from "./style";
 import Underline from "@/components/Underline";
-import { useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 const links = [
   { text: "HOME", number: "00", href: "/" },
@@ -17,33 +17,40 @@ const styles = {
 };
 
 const Header = () => {
-  const getRoute = () => {
-    const location = useLocation();
-    const path = location.pathname;
+  const location = useLocation();
+  const path = location.pathname;
+
+  const getCurrentRoute = () => {
     const currentRoute = links.findIndex((link) => link.href === path);
     return currentRoute;
   };
 
-  const [selectedTab, setSelectedTab] = useState(getRoute());
+  const [selectedTab, setSelectedTab] = useState(getCurrentRoute());
+
+  useEffect(() => {
+    setSelectedTab(getCurrentRoute());
+  }, [location]);
 
   return (
-    <Container>
-      <img src={logoImg} />
-      <Line />
-      <Navbar>
-        <Links>
-          {links.map((link, index) => (
-            <LinkItem key={index}>
-              <SLink to={link.href} onClick={() => setSelectedTab(index)} key={index}>
-                <span style={styles.span}>{link.number}</span>
-                {link.text}
-                {index === selectedTab ? <Underline key={index} layoutId="astros" transition={{ stiffness: 100 }} /> : null}
-              </SLink>
-            </LinkItem>
-          ))}
-        </Links>
-      </Navbar>
-    </Container>
+    <>
+      <Container>
+        <HeaderLogo src={logoImg} />
+        <Line />
+        <Navbar>
+          <Links>
+            {links.map((link, index) => (
+              <LinkItem key={index}>
+                <SLink to={link.href} onClick={() => setSelectedTab(index)} key={index}>
+                  <LinkNumber style={styles.span}>{link.number}</LinkNumber>
+                  {link.text}
+                  {index === selectedTab ? <Underline key={index} layoutId="astros" transition={{ stiffness: 100 }} /> : null}
+                </SLink>
+              </LinkItem>
+            ))}
+          </Links>
+        </Navbar>
+      </Container>
+    </>
   );
 };
 
