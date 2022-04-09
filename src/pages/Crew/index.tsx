@@ -17,7 +17,7 @@ const Crew: React.FC = () => {
   const [selectedPerson, setSelectedPerson] = React.useState<number>(0);
 
   return (
-    <Content initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, ease: "easeOut" }}>
+    <Content initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} exit={{ y: 50, opacity: 0, transition: { duration: 0.5 } }}>
       <CrewContainer>
         <div>
           <PageName color="white">

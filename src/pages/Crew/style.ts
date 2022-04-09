@@ -12,7 +12,6 @@ const Content = styled(motion.main)`
   margin-top: 76px;
   margin-left: 160px;
   height: 100%;
-  overflow: hidden;
 `;
 
 const CrewContainer = styled.div`

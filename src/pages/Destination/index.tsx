@@ -26,7 +26,7 @@ const Destination: React.FC = () => {
   const [selectedAstro, setSelectedAstro] = React.useState<number>(0);
 
   return (
-    <Content initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }}>
+    <Content initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} exit={{ y: 50, opacity: 0, transition: { duration: 0.5 } }}>
       <Heading5 color="white" style={styles.h5}>
         <span style={styles.span}>01</span>PICK YOUR DESTINATION
       </Heading5>

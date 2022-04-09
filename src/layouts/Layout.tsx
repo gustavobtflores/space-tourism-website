@@ -10,25 +10,63 @@ import backgroundDestination from "@/assets/destination/background-destination-d
 import backgroundCrew from "@/assets/crew/background-crew-desktop.jpg";
 import backgroundTech from "@/assets/technology/background-technology-desktop.jpg";
 
+import backgroundHomeTablet from "@/assets/home/background-home-tablet.jpg";
+import backgroundDestinationTablet from "@/assets/destination/background-destination-tablet.jpg";
+import backgroundCrewTablet from "@/assets/crew/background-crew-tablet.jpg";
+import backgroundTechTablet from "@/assets/technology/background-technology-tablet.jpg";
+
+import backgroundHomeMobile from "@/assets/home/background-home-mobile.jpg";
+import backgroundDestinationMobile from "@/assets/destination/background-destination-mobile.jpg";
+import backgroundCrewMobile from "@/assets/crew/background-crew-mobile.jpg";
+import backgroundTechMobile from "@/assets/technology/background-technology-mobile.jpg";
+
 const Layout: React.FC = () => {
   const location = useLocation();
 
-  const checkBackground = () => {
-    switch (location.pathname) {
-      case "/":
-        return backgroundHome;
-      case "/destination":
-        return backgroundDestination;
-      case "/crew":
-        return backgroundCrew;
-      case "/tech":
-        return backgroundTech;
+  const checkBackground = (size: string) => {
+    if (size === "desktop") {
+      switch (location.pathname) {
+        case "/":
+          return backgroundHome;
+        case "/destination":
+          return backgroundDestination;
+        case "/crew":
+          return backgroundCrew;
+        case "/tech":
+          return backgroundTech;
+      }
+    }
+
+    if (size === "tablet") {
+      switch (location.pathname) {
+        case "/":
+          return backgroundHomeTablet;
+        case "/destination":
+          return backgroundDestinationTablet;
+        case "/crew":
+          return backgroundCrewTablet;
+        case "/tech":
+          return backgroundTechTablet;
+      }
+    }
+
+    if (size === "mobile") {
+      switch (location.pathname) {
+        case "/":
+          return backgroundHomeMobile;
+        case "/destination":
+          return backgroundDestinationMobile;
+        case "/crew":
+          return backgroundCrewMobile;
+        case "/tech":
+          return backgroundTechMobile;
+      }
     }
   };
 
   return (
     <AppBody>
-      <Container backgroundImage={checkBackground()}>
+      <Container backgroundImage={checkBackground("desktop")} backgroundImageTablet={checkBackground("tablet")} backgroundImageMobile={checkBackground("mobile")}>
         <Header />
         <Outlet />
       </Container>

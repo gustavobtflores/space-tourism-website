@@ -19,6 +19,10 @@ const HeaderLogo = styled.img`
   @media screen and (max-width: 992px) {
     margin-left: 40px;
   }
+
+  @media screen and (max-width: 640px) {
+    margin: 0;
+  }
 `;
 
 const Line = styled.span`
@@ -47,6 +51,10 @@ const Navbar = styled.nav`
 
   @media screen and (max-width: 992px) {
     max-width: 450px;
+  }
+
+  @media screen and (max-width: 640px) {
+    display: none;
   }
 `;
 
@@ -82,4 +90,10 @@ const LinkNumber = styled.span`
   }
 `;
 
-export { Container, Line, Navbar, SLink, Links, LinkItem, LinkNumber, HeaderLogo };
+const HamburgerMenu = styled(motion.div)`
+  @media screen and (min-width: 639.97px) {
+    display: none;
+  }
+`;
+
+export { Container, Line, Navbar, SLink, Links, LinkItem, LinkNumber, HeaderLogo, HamburgerMenu };

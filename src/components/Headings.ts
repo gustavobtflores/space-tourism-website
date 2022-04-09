@@ -5,6 +5,11 @@ const Heading1 = styled.h1`
   font-family: "Bellefair", serif;
   color: #ffffff;
   font-weight: 400;
+
+  @media screen and (max-width: 640px) {
+    font-size: 80px;
+    text-align: center;
+  }
 `;
 
 const Heading2 = styled.h2`
@@ -40,6 +45,14 @@ const Heading5 = styled.h5`
   letter-spacing: 4.75px;
   color: ${(props) => (props.color === "blue" && "#d0d6f9") || (props.color === "white" && "#ffffff")};
   font-weight: 400;
+  line-height: 1.2em;
+
+  @media screen and (max-width: 640px) {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    text-align: center;
+  }
 `;
 
 const BodyText = styled.p`
@@ -48,6 +61,12 @@ const BodyText = styled.p`
   font-family: "Barlow", sans-serif;
   color: #d0d6f9;
   font-weight: 400;
+
+  @media screen and (max-width: 640px) {
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+  }
 `;
 
 const SubHeading1 = styled.h6`

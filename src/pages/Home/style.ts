@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const Content = styled(motion.main)`
   margin-top: 250px;
@@ -15,13 +14,17 @@ const Content = styled(motion.main)`
     margin-top: 100px;
     text-align: center;
   }
+
+  @media screen and (max-width: 640px) {
+    margin-top: 48px;
+  }
 `;
 
 const TextWrapper = styled.div`
-  width: 450px;
+  max-width: 450px;
 `;
 
-const Explore = styled(Link)`
+const Explore = styled(motion.span)`
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -45,6 +48,14 @@ const Explore = styled(Link)`
 
   @media screen and (max-width: 992px) {
     align-self: unset;
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 150px;
+    height: 150px;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 1.25px;
   }
 `;
 

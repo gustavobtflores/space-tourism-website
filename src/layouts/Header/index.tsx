@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
 import logoImg from "@/assets/shared/logo.svg";
-import { Container, Line, Navbar, SLink, Links, LinkItem, LinkNumber, HeaderLogo } from "./style";
+import { Container, Line, Navbar, SLink, Links, LinkItem, LinkNumber, HeaderLogo, HamburgerMenu } from "./style";
 import Underline from "@/components/Underline";
 import { Outlet, useLocation } from "react-router-dom";
+import hamburgerIcon from "@/assets/shared/icon-hamburger.svg";
 
 const links = [
   { text: "HOME", number: "00", href: "/" },
@@ -17,6 +18,7 @@ const styles = {
 };
 
 const Header = () => {
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const location = useLocation();
   const path = location.pathname;
 
@@ -49,6 +51,9 @@ const Header = () => {
             ))}
           </Links>
         </Navbar>
+        <HamburgerMenu>
+          <img src={hamburgerIcon} />
+        </HamburgerMenu>
       </Container>
     </>
   );
