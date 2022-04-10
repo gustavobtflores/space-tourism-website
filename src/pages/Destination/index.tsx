@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { BodyText, Heading1, Heading2, Heading5, SubHeading1, SubHeading2 } from "@/components/Headings";
-import { Content, Astro, Navbar, DestinationsList, AstroItem, DestinationsWrapper, DestinationsTexts, Separator, AstroInfo } from "./style";
+import { Content, Astro, Navbar, DestinationsList, AstroItem, DestinationsWrapper, DestinationsTexts, Separator, AstroInfo, AstroInfoWrapper, AstroImage, AstroName, AstroDescription } from "./style";
 
 import data from "@/data/data.json";
 import moon from "@/assets/destination/image-moon.webp";
@@ -17,8 +17,7 @@ const images: string[] = [moon, mars, europa, titan];
 const styles = {
   span: { opacity: "0.5", marginRight: "28px", fontWeight: "700" },
   h5: { marginBottom: "64px" },
-  div: { minWidth: "390px", maxWidth: "445px" },
-  bodytext: { marginBottom: "50px" },
+  bodytext: {},
   subheading2: { marginBottom: "12px" },
 };
 
@@ -26,7 +25,7 @@ const Destination: React.FC = () => {
   const [selectedAstro, setSelectedAstro] = React.useState<number>(0);
 
   return (
-    <Content initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} exit={{ y: 50, opacity: 0, transition: { duration: 0.5 } }}>
+    <Content initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }} exit={{ x: -50, opacity: 0, transition: { duration: 0.5 } }}>
       <Heading5 color="white" style={styles.h5}>
         <span style={styles.span}>01</span>PICK YOUR DESTINATION
       </Heading5>
@@ -36,7 +35,7 @@ const Destination: React.FC = () => {
             <Astro key={index}>
               {index === selectedAstro && (
                 <AnimatePresence>
-                  <motion.img
+                  <AstroImage
                     key={image}
                     src={image}
                     initial={{ opacity: 0 }}
@@ -56,7 +55,7 @@ const Destination: React.FC = () => {
             </Astro>
           ))}
         </div>
-        <div style={styles.div}>
+        <AstroInfoWrapper>
           <Navbar>
             <DestinationsList>
               {data.destinations.map((destination, index) => (
@@ -73,8 +72,8 @@ const Destination: React.FC = () => {
                 index === selectedAstro && (
                   <AnimatePresence key={index}>
                     <DestinationsTexts key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                      <Heading2>{destination.name}</Heading2>
-                      <BodyText style={styles.bodytext}>{destination.description}</BodyText>
+                      <AstroName>{destination.name}</AstroName>
+                      <AstroDescription style={styles.bodytext}>{destination.description}</AstroDescription>
                       <Separator />
                       <AstroInfo>
                         <div>
@@ -91,7 +90,7 @@ const Destination: React.FC = () => {
                 )
             )}
           </div>
-        </div>
+        </AstroInfoWrapper>
       </DestinationsWrapper>
     </Content>
   );

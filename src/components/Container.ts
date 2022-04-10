@@ -14,15 +14,17 @@ const Container = styled.div<ContainerProps>`
   width: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
     background: ${(props) => `url(${props.backgroundImageTablet}) no-repeat center center`};
+    background-size: cover;
   }
 
   @media screen and (max-width: 640px) {
     background: ${(props) => `url(${props.backgroundImageMobile}) no-repeat center center`};
     padding: 24px;
+    background-size: cover;
   }
 `;
 

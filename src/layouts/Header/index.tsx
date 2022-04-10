@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import logoImg from "@/assets/shared/logo.svg";
 import { Container, Line, Navbar, SLink, Links, LinkItem, LinkNumber, HeaderLogo, HamburgerMenu } from "./style";
 import Underline from "@/components/Underline";
-import { Outlet, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import hamburgerIcon from "@/assets/shared/icon-hamburger.svg";
 
 const links = [
@@ -42,10 +42,10 @@ const Header = () => {
           <Links>
             {links.map((link, index) => (
               <LinkItem key={index}>
-                <SLink to={link.href} onClick={() => setSelectedTab(index)} key={index}>
+                <SLink to={link.href} onClick={() => setSelectedTab(index)}>
                   <LinkNumber style={styles.span}>{link.number}</LinkNumber>
                   {link.text}
-                  {index === selectedTab ? <Underline key={index} layoutId="astros" transition={{ stiffness: 100 }} /> : null}
+                  {index === selectedTab ? <Underline key={index} layoutId="astros" transition={{ duration: 0.5 }} /> : null}
                 </SLink>
               </LinkItem>
             ))}

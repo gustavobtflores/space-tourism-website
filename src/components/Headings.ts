@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const Heading1 = styled.h1`
@@ -30,7 +31,7 @@ const Heading3 = styled.h3`
   text-transform: uppercase;
 `;
 
-const Heading4 = styled.h4`
+const Heading4 = styled(motion.h4)`
   font-family: "Bellefair", serif;
   font-size: 32px;
   font-style: normal;
@@ -46,6 +47,7 @@ const Heading5 = styled.h5`
   color: ${(props) => (props.color === "blue" && "#d0d6f9") || (props.color === "white" && "#ffffff")};
   font-weight: 400;
   line-height: 1.2em;
+  margin-left: 24px;
 
   @media screen and (max-width: 640px) {
     font-size: 16px;

@@ -17,7 +17,7 @@ const Technology: React.FC = () => {
   const tech = data.technology[selectedTech];
 
   return (
-    <Container>
+    <Container initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }} exit={{ x: 50, opacity: 0, transition: { duration: 0.5 } }}>
       <PageName color="white">
         <PageNumber>03</PageNumber>SPACE LAUNCH 101
       </PageName>

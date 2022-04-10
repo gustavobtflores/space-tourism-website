@@ -14,7 +14,7 @@ const styles = {
 const Home = () => {
   return (
     <>
-      <Content initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} exit={{ y: 50, opacity: 0, transition: { duration: 0.5 } }}>
+      <Content initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }} exit={{ x: -50, opacity: 0, transition: { duration: 0.5 } }}>
         <TextWrapper>
           <Heading5 color="blue">SO, YOU WANT TO TRAVEL TO</Heading5>
           <Heading1 style={styles.h1}>SPACE</Heading1>

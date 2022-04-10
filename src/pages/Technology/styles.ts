@@ -2,7 +2,7 @@ import { BodyText, Heading3, Heading4 } from "@components/Headings";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const Container = styled.main`
+const Container = styled(motion.main)`
   display: flex;
   flex-direction: column;
   margin-top: 80px;
@@ -29,7 +29,6 @@ const TechWrapper = styled.div`
 const NavigationMenu = styled.nav`
   display: flex;
   align-items: center;
-  overflow: hidden;
 `;
 
 const NavigationList = styled.ul`
@@ -55,10 +54,10 @@ const NavigationItem = styled.li<{ selected?: boolean }>`
   justify-content: center;
   align-items: center;
   border: 1px solid #ffffff;
-  transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.4s ease-out, transform 0.3s ease-out;
   cursor: pointer;
 
-  ${({ selected }) => selected && `background-color: #ffffff; color: #000000;`}
+  ${({ selected }) => selected && `background-color: #ffffff; color: #000000; transform: scale(1.2)`}
 `;
 
 const TechInfo = styled(motion.div)``;

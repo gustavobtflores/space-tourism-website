@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Container = styled.header`
   display: flex;
@@ -69,7 +69,7 @@ const LinkItem = styled.li`
   padding: 38px 0;
 `;
 
-const SLink = styled(Link)`
+const SLink = styled(NavLink)`
   color: #ffffff;
   font-family: "Barlow Condensed", sans-serif;
   text-decoration: none;

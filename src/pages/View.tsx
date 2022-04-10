@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 import Layout from "@layouts/Layout";
 
@@ -6,7 +7,6 @@ import Home from "./Home";
 import Destination from "./Destination";
 import Crew from "./Crew";
 import Technology from "./Technology";
-import { AnimatePresence } from "framer-motion";
 
 const View = () => {
   const location = useLocation();
